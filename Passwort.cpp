@@ -29,7 +29,7 @@ ifstream txt,psw;
 
 
 
-	//feststellen ob Passwort festgelegt wurde
+	//checks if password exists
 	
 		txt.open("Programm.txt",ios::out | ios::app | ios::in);
 		if (txt.is_open())
@@ -49,10 +49,10 @@ ifstream txt,psw;
 			
 		 }
 	
-		//Passwort festlegen
+		//set up password
 	if (rPasswort == "")
 	{
-		cout << " Bitte gib ein Passwort für das Programm ein (Nur ASCII erlaubt) \n Passwort: ";	
+		cout << " Bitte gib ein Passwort fÃ¼r das Programm ein (Nur ASCII erlaubt) \n Passwort: ";	
 		cin >> rPasswort;
 		
 		for(size_t i = 0; i < rPasswort.size(); ++i)
@@ -77,7 +77,7 @@ ifstream txt,psw;
        {
 	   kPasswort = rPasswort;
 	   HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE); 
- 	   DWORD mode = 0;                                                                    //Macht Eingabe unsichtbar
+ 	   DWORD mode = 0;                                                                  
        GetConsoleMode(hStdin, &mode);
        SetConsoleMode(hStdin, mode & (~ENABLE_ECHO_INPUT));
 	      	   
@@ -92,7 +92,7 @@ ifstream txt,psw;
 		if (Passwort == kPasswort)
 	{
 		 
-     	cout << " M\224chtes du ein Passwort eingeben (1) oder die Passw\224rter anzeigen lassen (2) ? " << endl;
+     	cout << " Do you want to enter an information (1) or do you want to see your inputs (2) ? " << endl;
      	cin.sync();
      	cin >> eingabe; 
      	cin.sync();
@@ -101,7 +101,7 @@ ifstream txt,psw;
      
 	 {
 	 
-	 	cout << " Wie viele Eingaben möchtest du machen? ";
+	 	cout << " How many Informations do you want to save? ";
 	 	cin >> eingabe;
 	 
 	 	while (loop != eingabe)
@@ -177,8 +177,8 @@ ifstream txt,psw;
 	
 
 
-    		cout << "Falsches Passwort \n Weitere Versuche: " << versuche - falsch << endl;
-		    cout << "Programm beenden (y) oder Passwort neu eingeben (n) ?";
+    		cout << "Wrong Password \n Remaining tries: " << versuche - falsch << endl;
+		    cout << "Exit program (y) or do you want to try again (n) ?";
 		    cin >> wahl;
 		    
 							if(wahl == "y" || wahl == "Y"||falsch>4)
@@ -195,7 +195,7 @@ ifstream txt,psw;
 							
 								{
 																													                                                                                           
-                        			cout <<" Falsche Eingabe "<<endl;                                                                                                             
+                        			cout <<" Wrong input "<<endl;                                                                                                             
  									break;
   								} 
     
